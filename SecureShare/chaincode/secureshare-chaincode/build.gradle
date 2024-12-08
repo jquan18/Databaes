@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2' // Ensure Gradle version is 7.0+
+}
+
+group 'com.example.secureshare'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    // Uncomment if needed
+    // maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation('org.hyperledger.fabric-chaincode-java:fabric-chaincode-shim:2.4.0') {
+        // Exclude the incorrect dependency if it's still being pulled transitively
+        exclude group: 'com.github.everit-org.json-schema', module: 'org.everit.json.schema'
+    }
+    implementation 'com.github.erosb:everit-json-schema:1.14.4' // Correct dependency
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    runtimeOnly 'org.slf4j:slf4j-simple:1.7.30'
+    implementation 'org.json:json:20220320'
+    // Add other dependencies as needed
+}
+
+shadowJar {
+    archiveBaseName.set('secureshare-chaincode')
+    archiveVersion.set('')
+    archiveClassifier.set('')
+    manifest {
+        attributes 'Main-Class': 'com.example.secureshare.SecureShareChaincode' // Ensure this matches your main class
+    }
+}
+
+// Dependency substitution to handle transitive dependency conflict
+configurations.all {
+    resolutionStrategy.dependencySubstitution {
+        substitute module('com.github.everit-org.json-schema:org.everit.json.schema') using module('com.github.erosb:everit-json-schema:1.14.4')
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xlint:deprecation', '-Xlint:unchecked']
+}
+
+tasks.named('build') {
+    dependsOn shadowJar
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'com.secureshare.SecureShareContract' // Replace with your main class
+        )
+    }
+    from('META-INF') {
+        include 'MANIFEST.MF'
+    }
+}
+
