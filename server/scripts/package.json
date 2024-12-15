@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "fabric-ca-client": "^2.2.20",
+    "fabric-network": "^2.2.20",
+    "uuid": "^11.0.3"
+  }
+}
