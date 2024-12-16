@@ -1,5 +1,7 @@
+![Screenshot 2024-12-15 185056](https://github.com/user-attachments/assets/42616b04-094a-4f4c-8784-94f1ed718b62)
 # Databaes - Enterprise Solution for Secure Document Management System
 > Trust Blockchain, Not Server
+
 
 ## 🏗️ Architecture
 ![Databaes Icraft 3 (3)](https://github.com/user-attachments/assets/abe56f00-1b54-4d14-971e-609c2cfeeabe)
@@ -16,6 +18,7 @@ Databaes is a revolutionary document management system that combines blockchain 
 
 
 ## 🛠️ Technology Stack
+![Screenshot 2024-12-16 223301](https://github.com/user-attachments/assets/8a0934a5-9ff3-4999-9a8d-5203bfc33dc4)
 
 - **Blockchain**: Hyperledger Fabric
 - **Storage**: IPFS (InterPlanetary File System)
