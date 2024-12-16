@@ -1,7 +1,6 @@
 ![Screenshot 2024-12-15 185056](https://github.com/user-attachments/assets/42616b04-094a-4f4c-8784-94f1ed718b62)
-# Databaes - Enterprise Solution for Secure Document Management System
-> Trust Blockchain, Not Server
-
+# Databaes - Trust Blockchain, Not Server
+**A Enterprise Solution for Secure Document Management System**
 
 ## 🏗️ Architecture
 ![Databaes Icraft 3 (3)](https://github.com/user-attachments/assets/abe56f00-1b54-4d14-971e-609c2cfeeabe)
