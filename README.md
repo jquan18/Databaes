@@ -130,9 +130,6 @@ node app.js
 
 
 ## 👥 Team
-
-- https://github.com/colin-woon
-
 - [Jun Quan](https://github.com/jquan18)
 - [Colin Woon](https://github.com/colin-woon) 
 - [Cody Liew](https://github.com/codyy6) 
